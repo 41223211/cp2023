@@ -142,44 +142,93 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">EU << <a href='EU.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>JAP</h1>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+    <div id="tipue_search_content">ROC << <a href='ROC.html'>Previous</a> <a href='JAP.html'>Next</a> >> JAP<br /><h1>EU</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
 
+gdPoint *drawThinStar(int x, int y, int radius, int numPoints);
+
+void draw_star_circle(gdImagePtr img);
+
 int main() {
-    // 设置国旗的宽度和高度
-    int width = 600;
-    int height = 400;
+    // 设置图像宽度和高度
+    int width = 900;  // 可根据需要调整
+    int height = 600;  // 可根据需要调整
 
     // 创建画布
     gdImagePtr img = gdImageCreateTrueColor(width, height);
-
     // 设置白色背景
-    int white = gdImageColorAllocate(img, 255, 255, 255);
-    gdImageFill(img, 0, 0, white);
-  // 设置红色圆形
-  int red = gdImageColorAllocate(img, 255, 0, 0);
-  int centerX = width / 2;
-  int centerY = height / 2;
-  int radius = height / 4;  // 设置圆形的半径
+    int blue = gdImageColorAllocate(img, 0, 0, 150);
+    gdImageFill(img, 0, 0, blue);
 
-  gdImageFilledEllipse(img, centerX, centerY, radius * 2, radius * 2, red);
+    // 确保画布成功创建
+    if (img == NULL) {
+        fprintf(stderr, "画布创建失败\n");
+        return 1;  // 返回错误代码
+    }
 
-  
+    // 绘制星星圈
+    draw_star_circle(img);
+
     // 保存图片
-    FILE *outputFile = fopen("japan_flag.png", "wb");
+    FILE *outputFile = fopen("thin_star_circle.png", "wb");
     gdImagePng(img, outputFile);
     fclose(outputFile);
 
     // 释放内存
     gdImageDestroy(img);
 
-    printf("日本国旗已经绘制完成，保存为 japan_flag.png\n");
+    printf("星星圈已经绘制完成，保存为 thin_star_circle.png\n");
 
     return 0;
+}
+
+void draw_star_circle(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+
+    // 分配颜色
+    int yellow = gdImageColorAllocate(img, 255, 223, 0);  // 中黄色
+
+    // 获取中心坐标
+    int centerX = width / 2;
+    int centerY = height / 2;
+
+    // 半径和数量
+    int radius = height / 3;
+    int numStars = 12;
+
+    // 绘制星星圈
+    for (int i = 0; i &lt; numStars; i++) {
+        double angle = (2 * M_PI * i) / numStars;
+
+        // 计算星星位置
+        int starX = centerX + cos(angle) * radius;
+        int starY = centerY + sin(angle) * radius;
+
+        // 绘制五角星
+        gdImageFilledPolygon(img, drawThinStar(starX, starY, height / 30, 5), 10, yellow);
+    }
+}
+
+gdPoint *drawThinStar(int x, int y, int radius, int numPoints) {
+    int i;
+    static gdPoint star[11];
+
+    for (i = 0; i &lt; 2 * numPoints; i++) {
+        double outerRadius = (i % 2 == 0) ? radius * 1.5 : radius * 0.5;  // 调整星星尖角的长度
+        double angle = M_PI * i / numPoints;
+        star[i].x = x + cos(angle) * outerRadius;
+        star[i].y = y + sin(angle) * outerRadius;
+    }
+
+    // 将最后一个点连接到第一个点，形成闭合的多边形
+    star[2 * numPoints] = star[0];
+
+    return star;
 }</pre>
-<p><br/><img alt="" height="400" src="./../images/japan_flag.png" width="600"/></p><br />EU << <a href='EU.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+<p><img alt="" height="400" src="./../images/eu_flag.png" width="600"/></p><br />ROC << <a href='ROC.html'>Previous</a> <a href='JAP.html'>Next</a> >> JAP</div>
         
     <!-- footer -->
       <div class="container">
