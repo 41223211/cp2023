@@ -85,90 +85,91 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, white);
 }</pre>
 <p><br/><br/>}<img alt="" height="267" src="/images/roc_flag.png" width="400"/></p>
-<h1>W15</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_roc_flag(gdImagePtr img);
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color);
-
-int main() {
-    int width = 1200;
-    int height = (int)(width * 2.0 / 3.0);
-
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
-
-    draw_roc_flag(img);
-
-    int white = gdImageColorAllocate(img, 255, 255, 255);
-    gdImageLine(img, 429, 125, 279, 165, white);  // A to B
-    gdImageLine(img, 279, 165, 170, 274, white);  // B to E
-    gdImageLine(img, 170, 274, 429, 125, white);  // E to D
-
-    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");
-    if (outputFile == NULL) {
-        fprintf(stderr, "Error opening the output file.\n");
-        return 1;
-    }
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
-    return 0;
-}
-
-void draw_roc_flag(gdImagePtr img) {
-    int width = gdImageSX(img);
-    int height = gdImageSY(img);
-    int red, white, blue;
-    int center_x = (int)(width / 4);
-    int center_y = (int)(height / 4);
-    int sun_radius = (int)(width / 8);
-    int white_circle_dia = sun_radius;
-    int blue_circle_dia = white_circle_dia + white_circle_dia * 2 / 15;
-
-    red = gdImageColorAllocate(img, 255, 0, 0);
-    white = gdImageColorAllocate(img, 255, 255, 255);
-    blue = gdImageColorAllocate(img, 0, 0, 149);
-
-    gdImageFilledRectangle(img, 0, 0, width, height, red);
-    gdImageFilledRectangle(img, 0, 0, (int)(width / 2.0), (int)(height / 2.0), blue);
-
-    draw_white_sun(img, center_x, center_y, sun_radius, white);
-
-    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, blue);
-    gdImageFilledEllipse(img, center_x, center_y, white_circle_dia, white_circle_dia, white);
-}
-
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color) {
-    float deg = M_PI / 180;
-
-    int ax = center_x;
-    int ay = center_y - sun_radius;
-
-    gdPoint points[4];
-    points[0].x = ax + sun_radius * sin(30 * deg);
-    points[0].y = ay + sun_radius - sun_radius * cos(30 * deg);
-
-    points[1].x = ax - sun_radius * tan(15 * deg) + sun_radius * 2 - sun_radius * 2 * cos(30 * deg);
-    points[1].y = ay + sun_radius * 2 * sin(30 * deg);
-
-    points[2].x = ax - sun_radius * sin(30 * deg);
-    points[2].y = ay + sun_radius - (sun_radius - sun_radius * cos(30 * deg));
-
-    points[3].x = ax + sun_radius * 2 - sun_radius * 2 * cos(30 * deg);
-    points[3].y = ay - sun_radius * 2 * sin(30 * deg);
-
-    gdImageLine(img, points[0].x, points[0].y, points[1].x, points[1].y, color);
-    gdImageLine(img, points[1].x, points[1].y, points[2].x, points[2].y, color);
-    gdImageLine(img, points[2].x, points[2].y, points[3].x, points[3].y, color);
-    gdImageLine(img, points[3].x, points[3].y, points[0].x, points[0].y, color);
-}
+<h1><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">W15</span></span></h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+#include &lt;數學.h&gt;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+int main() {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    整數寬度=1200；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = (int)(寬度 * 2.0 / 3.0);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePtr img = gdImageCreateTrueColor(寬度, 高度);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageAlphaBlending(img, 0);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    繪製_roc_flag（img）；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 白色 = gdImageColorAllocate(img, 255, 255, 255);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 429, 125, 279, 165, 白色); </span><span style="vertical-align: inherit;">// A 到 B</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 279, 165, 170, 274, 白色); </span><span style="vertical-align: inherit;">// B 到 E</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 170, 274, 429, 125, 白色); </span><span style="vertical-align: inherit;">// E 到 D</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    FILE *outputFile = fopen("roc_flag_in_gd.png", "wb");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    如果（輸出檔== NULL）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        fprintf(stderr, "開啟輸出檔時發生錯誤。\n");</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+        返回1；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    }</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImagePngEx(img, 輸出檔, 9);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    fclose(輸出檔);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageDestroy(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    返回0；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+無效draw_roc_flag（gdImagePtr img）{</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 寬度 = gdImageSX(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 高度 = gdImageSY(img);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 紅、白、藍；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int center_x = (int)(寬度/4);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int center_y = (int)(高度 / 4);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int sun_radius = (int)(寬度/8);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int White_circle_dia = sun_radius;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int 藍色圓直徑 = 白色圓直徑 + 白色圓直徑 * 2 / 15;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    紅色 = gdImageColorAllocate(img, 255, 0, 0);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    白色 = gdImageColorAllocate(img, 255, 255, 255);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    藍色 = gdImageColorAllocate(img, 0, 0, 149);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledRectangle(img, 0, 0, 寬度, 高度, 紅色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledRectangle(img, 0, 0, (int)(寬度 / 2.0), (int)(高度 / 2.0), 藍色);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    draw_white_sun(img, center_x, center_y, sun_radius, 白色);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledEllipse(img, center_x, center_y, blue_circle_dia, blue_circle_dia, 藍色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageFilledEllipse（img，center_x，center_y，white_circle_dia，white_circle_dia，白色）；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int color) {</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    浮點數 = M_PI / 180;</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int ax = center_x;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    int ay = center_y - sun_radius；</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdPoint點[4]；</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[0].x = ax + sun_radius * sin(30 * deg);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[0].y = ay + sun_radius - sun_radius * cos(30 * deg);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[1].x = ax - sun_radius * tan(15 * deg) + sun_radius * 2 - sun_radius * 2 * cos(30 * deg);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[1].y = ay + sun_radius * 2 * sin(30 * deg);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[2].x = ax - sun_radius * sin(30 * deg);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[2].y = ay + sun_radius - (sun_radius - sun_radius * cos(30 * deg));</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[3].x = ax + sun_radius * 2 - sun_radius * 2 * cos(30 * deg);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    點[3].y = ay - sun_radius * 2 * sin(30 * deg);</span></span><span></span>
+<span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 點[0].x, 點[0].y, 點[1].x, 點[1].y, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 點[1].x, 點[1].y, 點[2].x, 點[2].y, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 點[2].x, 點[2].y, 點[3].x, 點[3].y, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+    gdImageLine(img, 點[3].x, 點[3].y, 點[0].x, 點[0].y, 顏色);</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
+}</span></span><span></span>
 </pre>
 <p><img caption="false" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p>
 <p><video controls="controls" height="641" width="1000">
-<source src="/images/roc_flag_in_gd.png"/></video></p><h1>PROC</h1>
+<source src="/downloads/roc.mp4" type="video/mp4"/></video></p>
+<p></p><h1>PROC</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
