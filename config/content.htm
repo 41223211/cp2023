@@ -85,7 +85,74 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, white);
 }</pre>
 <p><br/><br/>}<img alt="" height="267" src="/images/roc_flag.png" width="400"/></p>
-<h1>ANSIC</h1><h1>UK</h1>
+<h1>ANSIC</h1>
+<h2>1.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;將sidio.h的檔案內容加進來
+//int main()
+//{}表示一個區塊的開始和結束
+//printf()把框框內的文字列印到螢幕上
+//;分號代表句子的結束
+//\n表示換行
+//return(0);回傳0這個值
+#include &lt;stdio.h&gt;
+int main()
+{
+printf("Name :王凱瑞\n");
+printf("DOB :April 24, 2005\n");
+printf("Mobile :0966-636-108\n");
+return(0);  
+}</pre>
+<p><img alt="" height="200" src="/images/螢幕擷取畫面 2023-12-27 003050.png" width="615"/></p>
+<p></p>
+<p></p>
+<h2>2.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;將sidio.h的檔案內容加進來
+//int main(int argc, char *argv)argc 表示命令行参数的数量
+//{}表示一個區塊的開始和結束
+//#if __STDC_VERSION__ &gt;= 201710L 檢查 C 標準版本是否大於或等於 C18 (2017)。如果為真，則會列印「我們正在使用 C18！」。
+//printf()把框框內的文字列印到螢幕上
+//;分號代表句子的結束
+//\n表示換行
+//return(0);回傳0這個值
+#include &lt;stdio.h&gt;
+int main(int argc, char** argv)
+{
+  #if __STDC_VERSION__ &gt;= 202200L
+printf("We are in c20!\n");
+  #elif __STDC_VERSION__ &gt;= 201710L
+printf("We are in c17!\n");
+  #elif __STDC_VERSION__ &gt;= 199901L
+printf("We are in c99!\n");
+  #else
+printf("We are in c89/c90!\n");
+  #endif
+  
+return(0);
+}</pre>
+<p><img alt="" height="200" src="/images/螢幕擷取畫面 2023-12-27 003919.png" width="656"/></p>
+<h2>3.</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;將sidio.h的檔案內容加進來
+//int main()
+//{}表示一個區塊的開始和結束
+//printf()把框框內的文字列印到螢幕上
+//;分號代表句子的結束
+//\n表示換行
+//return(0);回傳0這個值
+#include &lt;stdio.h&gt;
+int main(){
+printf("          ######\n");
+printf("        ##      ##\n");
+printf("       ##        ##\n");
+printf("      ##          ##\n");
+printf("     ################\n");
+printf("    ##              ##\n");
+printf("   ##                ##\n");
+printf("  ##                  ##\n");
+  
+return(0);
+}</pre>
+<p><img alt="" height="200" src="/images/螢幕擷取畫面 2023-12-27 004322.png" width="317"/></p>
+<h1>UK</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 
@@ -165,7 +232,8 @@ int main() {
     return 0;
 }
 </pre>
-<p><img alt="" height="400" src="/images/uk_flag_with_lines.png" width="600"/></p><h1>W15</h1>
+<p><img alt="" height="400" src="/images/uk_flag_with_lines.png" width="600"/></p>
+<h1>W15</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
 #include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
 #include &lt;數學.h&gt;</span></span><span></span>
@@ -315,7 +383,8 @@ int main() {
 }
 </pre>
 <p><video controls="controls" height="641" width="1000">
-<source src="/downloads/15-2.mp4" type="video/mp4"/></video><br/><br/></p><h1>PROC</h1>
+<source src="/downloads/15-2.mp4" type="video/mp4"/></video><br/><br/></p>
+<h1>PROC</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;

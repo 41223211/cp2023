@@ -2,6 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,9 +142,32 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='ROC.html'>Next</a> >> ROC<br /><h1>About</h1>
-<p><a href="https://github.com/mdecycu/cmsite"> https://github.com/mdecycu/cmsite</a></p>
-<br /> <a href='ROC.html'>Next</a> >> ROC</div>
+    <div id="tipue_search_content">1. << <a href='1..html'>Previous</a> <a href='3..html'>Next</a> >> 3.<br /><h1>2.</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;將sidio.h的檔案內容加進來
+//int main(int argc, char *argv)argc 表示命令行参数的数量
+//{}表示一個區塊的開始和結束
+//#if __STDC_VERSION__ &gt;= 201710L 檢查 C 標準版本是否大於或等於 C18 (2017)。如果為真，則會列印「我們正在使用 C18！」。
+//printf()把框框內的文字列印到螢幕上
+//;分號代表句子的結束
+//\n表示換行
+//return(0);回傳0這個值
+#include &lt;stdio.h&gt;
+int main(int argc, char** argv)
+{
+  #if __STDC_VERSION__ &gt;= 202200L
+printf("We are in c20!\n");
+  #elif __STDC_VERSION__ &gt;= 201710L
+printf("We are in c17!\n");
+  #elif __STDC_VERSION__ &gt;= 199901L
+printf("We are in c99!\n");
+  #else
+printf("We are in c89/c90!\n");
+  #endif
+  
+return(0);
+}</pre>
+<p><img alt="" height="200" src="./../images/螢幕擷取畫面 2023-12-27 003919.png" width="656"/></p>
+<br />1. << <a href='1..html'>Previous</a> <a href='3..html'>Next</a> >> 3.</div>
         
     <!-- footer -->
       <div class="container">
