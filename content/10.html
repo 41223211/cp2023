@@ -143,8 +143,25 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">9 << <a href='9.html'>Previous</a> <a href='UK.html'>Next</a> >> UK<br /><h1>10</h1>
-<p></p>
-<br />9 << <a href='9.html'>Previous</a> <a href='UK.html'>Next</a> >> UK</div>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//weeks = (days % 365)/7;,a % b 将给出 a 除以 b 的余数。
+//days = 1329;等號左邊先做
+//days = days - ((years*365) + (weeks*7));減去年和周所佔的天數即可得到剩餘的天數
+//years = days/365;天除以1年365及得到年
+#include &lt;stdio.h&gt;
+int main()
+{
+  int days,years,weeks;
+  days = 1329;
+  years = days/365;
+  weeks = (days % 365)/7;
+  days = days - ((years*365) + (weeks*7));
+  printf("Years: %d\n",years);
+  printf("Weeks: %d\n",weeks);
+  printf("Days: %d\n",days);
+  return (0);
+}</pre>
+<p><img alt="" height="452" src="./../images/螢幕擷取畫面 2023-12-28 005739.png" width="515"/></p>
+<p></p><br />9 << <a href='9.html'>Previous</a> <a href='UK.html'>Next</a> >> UK</div>
         
     <!-- footer -->
       <div class="container">
