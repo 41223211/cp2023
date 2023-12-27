@@ -254,7 +254,31 @@ return(0);
 }</pre>
 <p><br/><br/><br/><img alt="" height="179" src="/images/螢幕擷取畫面 2023-12-28 001218.png" width="498"/><br/><br/></p>
 <h2>8</h2>
-<h1>UK</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//int是一個整數
+//int integer是一個變數
+//scanf表示從鍵盤讀入資料
+//%d表示十進位的整數
+//&amp;是取址運算
+//int tmp =integer1;等號左邊先做
+// printf("integer1: %d\n",integer1);印出來
+// printf("integer2: %d\n",integer2);印出來
+#include &lt;stdio.h&gt;
+int main(){
+  int integer1,integer2;
+  printf("Please enter first integer: ");
+  scanf("%d", &amp;integer1);
+  printf("Please enter second integer: ");
+  scanf("%d", &amp;integer2);
+int tmp =integer1;
+    integer1 =integer2;
+    integer2 = tmp;
+    printf("integer1: %d\n",integer1);
+    printf("integer2: %d\n",integer2);
+    
+  return(0);
+}</pre>
+<p><img alt="" height="100" src="/images/螢幕擷取畫面 2023-12-28 002331.png" width="556"/></p>
+<p></p><h1>UK</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 
