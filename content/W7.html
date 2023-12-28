@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='ROC.html'>ROC</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4.html'>4</a><li><a href='5.html'>5</a><li><a href='6.html'>6</a><li><a href='7.html'>7</a><li><a href='8.html'>8</a><li><a href='9.html'>9</a><li><a href='10.html'>10</a></li></ul><li><a href='UK.html'>UK</a><li><a href='W15.html'>W15</a><li><a href='PROC.html'>PROC</a><li><a href='EU.html'>EU</a><li><a href='JAP.html'>JAP</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='W6.html'>W6</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='1..html'>1.</a><li><a href='2..html'>2.</a><li><a href='3..html'>3.</a><li><a href='4.html'>4</a><li><a href='5.html'>5</a><li><a href='6.html'>6</a><li><a href='7.html'>7</a><li><a href='8.html'>8</a><li><a href='9.html'>9</a><li><a href='10.html'>10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,92 +142,90 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC<br /><h1>ROC</h1>
+    <div id="tipue_search_content">10 << <a href='10.html'>Previous</a> <a href='PROC.html'>Next</a> >> PROC<br /><h1>W7</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
-#include &lt;math.h&gt;
-
-void draw_roc_flag(gdImagePtr img);
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);
 
 int main() {
-    // width 3: height 2
-    int width = 1200;
-    int height = (int)(width*2.0 / 3.0);
+    FILE *out;
+    gdImagePtr im;
+    int blue, red, white;
 
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
-    gdImageAlphaBlending(img, 0);
+    // 创建一个600x400像素的图像
+    im = gdImageCreate(600, 400);
 
-    draw_roc_flag(img);
+    // 为蓝色、红色和白色分配颜色
+    blue = gdImageColorAllocate(im, 16, 17, 181); // 蓝色的RGB值
+    red = gdImageColorAllocate(im, 206, 17, 38);   // 红色的RGB值
+    white = gdImageColorAllocate(im, 255, 255, 255); // 白色的RGB值
 
-    FILE *outputFile = fopen("./../images/roc_flag.png", "wb");
-    if (outputFile == NULL) {
-        fprintf(stderr, "Error opening the output file.\n");
-        return 1;
-    }
-    gdImagePngEx(img, outputFile, 9);
-    fclose(outputFile);
-    gdImageDestroy(img);
+    // 用蓝色填充整个画布
+    gdImageFilledRectangle(im, 0, 0, 599, 399, blue);
+
+    // 设置线的粗细
+    int thicknessVertical = 100;
+    int thicknessHorizontal = 100;
+    int thicknessDiagonal = 50;
+    int thicknessred = 70; // Adjust the thickness of the white line
+  int thicknessreds = 30;
+
+    // 在中间绘制一条红色垂直线
+    int x = 300;
+    gdImageSetThickness(im, thicknessVertical);
+    gdImageLine(im, x, 0, x, 399, white);
+
+    // 在中间绘制一条红色水平线
+    int y = 200;
+    gdImageSetThickness(im, thicknessHorizontal);
+  
+    gdImageLine(im, 0, y, 599, y, white);
+
+    //gdImageSetThickness(im, thicknessred);
+  //gdImageLine(im, 0, y, 599, y, red);
+    
+    // 绘制第一条对角线
+    gdImageSetThickness(im, thicknessDiagonal);
+    gdImageLine(im, 0, 0, 599,399, white);
+  
+  gdImageSetThickness(im, thicknessreds);
+    gdImageLine(im, 0, 0, 599, 399, red);
+
+    // 绘制第二条对角线
+    gdImageSetThickness(im, thicknessDiagonal);
+    gdImageLine(im, 0, 399, 599, 0, white);
+    gdImageSetThickness(im, thicknessreds);
+    gdImageLine(im, 0, 399, 599, 0, red);
+  
+
+    // 设置白色线的粗细
+    gdImageSetThickness(im, thicknessred);
+
+    // 在中间绘制一条白色垂直线
+    gdImageLine(im, x, 0, x, 399, red);
+  gdImageLine(im,  0, 200, 599 , 200, red);
+  
+  
+  
+ 
+ 
+    // 恢复线的粗细
+    gdImageSetThickness(im, thicknessVertical);
+
+    // 将图像保存到文件
+    out = fopen("uk_flag_with_lines.png", "wb");
+    gdImagePng(im, out);
+    fclose(out);
+
+    // 释放内存
+    gdImageDestroy(im);
+
     return 0;
 }
-
-void draw_roc_flag(gdImagePtr img) {
-    int width = gdImageSX(img);
-    int height = gdImageSY(img);
-    int red, white, blue;
-    int center_x = (int)(width/4);
-    int center_y = (int)(height/4);
-    int sun_radius = (int)(width/8);
-
-    // Colors for the flag
-    red = gdImageColorAllocate(img, 242, 0, 0); // Red color
-    white = gdImageColorAllocate(img, 255, 255, 255); // White stripes
-    blue = gdImageColorAllocate(img, 0, 41, 204); // Blue
-
-    // 繪製紅色矩形區域
-    gdImageFilledRectangle(img, 0, 0, width, height, red);
-
-    // 繪製藍色矩形區域
-    gdImageFilledRectangle(img, 0, 0, (int)(width/2.0), (int)(height/2.0), blue);
-
-    // 繪製太陽
-    draw_white_sun(img, center_x, center_y, sun_radius, white, red, blue);
-}
-void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue) {
-    float angle = 0;
-    int numRays = 12; // 光芒的數量
-
-    gdPoint points[3]; // 三個頂點的陣列
-
-    for (int i = 0; i &lt; numRays; i++) {
-        angle = i * (2 * M_PI / numRays);
-        float x1 = center_x + cos(angle) * sun_radius;
-        float y1 = center_y + sin(angle) * sun_radius;
-
-        // 調整兩個底邊頂點的位置
-      float x2 = center_x + cos(angle + 0.35) * (sun_radius * 0.5);
-      float y2 = center_y + sin(angle + 0.35) * (sun_radius * 0.5);
-      float x3 = center_x + cos(angle - 0.35) * (sun_radius * 0.5);
-      float y3 = center_y + sin(angle - 0.35) * (sun_radius * 0.5);
-
-        // 設定多邊形的三個頂點
-        points[0].x = (int)x1;
-        points[0].y = (int)y1;
-        points[1].x = (int)x2;
-        points[1].y = (int)y2;
-        points[2].x = (int)x3;
-        points[2].y = (int)y3;
-
-        gdImageFilledPolygon(img, points, 3, white);
-    }
-  //外圈
-  gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.2, sun_radius * 1.2, blue);
-
-    // 繪製太陽內部
-    gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1, white);
-}</pre>
-<p><br/><br/>}<img alt="" height="267" src="./../images/roc_flag.png" width="400"/></p>
-<br />About << <a href='About.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC</div>
+</pre>
+<p></p>
+<p><img alt="" height="400" src="./../images/uk_flag_with_lines.png" width="600"/></p>
+<p></p>
+<br />10 << <a href='10.html'>Previous</a> <a href='PROC.html'>Next</a> >> PROC</div>
         
     <!-- footer -->
       <div class="container">
