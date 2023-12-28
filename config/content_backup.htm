@@ -501,6 +501,44 @@ gdPoint *drawThinStar(int x, int y, int radius, int numPoints) {
     return star;
 }</pre>
 <p><img alt="" height="600" src="/images/proc_flag.png" width="900"/></p>
+<h2>JAP</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    // 设置国旗的宽度和高度
+    int width = 600;
+    int height = 400;
+
+    // 创建画布
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+
+    // 设置白色背景
+    int white = gdImageColorAllocate(img, 255, 255, 255);
+    gdImageFill(img, 0, 0, white);
+  // 设置红色圆形
+  int red = gdImageColorAllocate(img, 255, 0, 0);
+  int centerX = width / 2;
+  int centerY = height / 2;
+  int radius = height / 4;  // 设置圆形的半径
+
+  gdImageFilledEllipse(img, centerX, centerY, radius * 2, radius * 2, red);
+
+  
+    // 保存图片
+    FILE *outputFile = fopen("japan_flag.png", "wb");
+    gdImagePng(img, outputFile);
+    fclose(outputFile);
+
+    // 释放内存
+    gdImageDestroy(img);
+
+    printf("日本国旗已经绘制完成，保存为 japan_flag.png\n");
+
+    return 0;
+}</pre>
+<img alt="" height="400" src="/images/japan_flag.png" width="600"/>
 <h1>W15</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">#include &lt;stdio.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
 #include &lt;gd.h&gt;</span></span><span></span><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">
@@ -741,7 +779,8 @@ gdPoint *drawThinStar(int x, int y, int radius, int numPoints) {
 }</pre>
 <p>1</p>
 <p><img alt="" height="400" src="/images/eu_flag.png" width="600"/></p>
-<p><br/><br/></p><h1>Brython</h1>
+<p><br/><br/></p>
+<h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
