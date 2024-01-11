@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W6.html'>W6</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='8.html'>8</a><li><a href='9.html'>9</a><li><a href='10.html'>10</a></li></ul><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='2-1.html'>2-1</a><li><a href='2-2.html'>2-2</a><li><a href='2-3.html'>2-3</a><li><a href='2-4.html'>2-4</a><li><a href='2-5.html'>2-5</a><li><a href='2-6.html'>2-6</a><li><a href='2-7.html'>2-7</a><li><a href='2-8.html'>2-8</a><li><a href='2-9.html'>2-9</a><li><a href='2-10.html'>2-10</a><li><a href='3-1.html'>3-1</a><li><a href='3-2.html'>3-2</a><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W6.html'>W6</a><li class='has-children'><a href='ANSIC.html'>ANSIC</a><ul class='dropdown'><li><a href='9.html'>9</a><li><a href='10.html'>10</a></li></ul><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='2-1.html'>2-1</a><li><a href='2-2.html'>2-2</a><li><a href='2-3.html'>2-3</a><li><a href='2-4.html'>2-4</a><li><a href='2-5.html'>2-5</a><li><a href='2-6.html'>2-6</a><li><a href='2-7.html'>2-7</a><li><a href='2-8.html'>2-8</a><li><a href='2-9.html'>2-9</a><li><a href='2-10.html'>2-10</a><li><a href='3-1.html'>3-1</a><li><a href='3-2.html'>3-2</a><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='8.html'>Next</a> >> 8<br /><h1>ANSIC</h1>
+    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='9.html'>Next</a> >> 9<br /><h1>ANSIC</h1>
 <br/><br/><br/><br/>1.
 <p><span>編寫一個 C 程式來列印您的姓名、出生日期和手機號碼</span></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;將sidio.h的檔案內容加進來
@@ -302,7 +302,31 @@ area = 3.14 * radius * radius;
 printf("Area of the Circle = %f square inches\n", area);
 return(0);
 }</pre>
-<p><br/><br/><br/><img alt="" height="179" src="./../images/螢幕擷取畫面 2023-12-28 001218.png" width="498"/><br/><br/></p><br />W6 << <a href='W6.html'>Previous</a> <a href='8.html'>Next</a> >> 8</div>
+<p><br/><br/><br/><img alt="" height="179" src="./../images/螢幕擷取畫面 2023-12-28 001218.png" width="498"/><br/><br/></p><p>8讀取鍵盤輸入的了個數在印出來</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//int是一個整數
+//int integer是一個變數
+//scanf表示從鍵盤讀入資料
+//%d表示十進位的整數
+//&amp;是取址運算
+//int tmp =integer1;等號左邊先做
+// printf("integer1: %d\n",integer1);印出來
+// printf("integer2: %d\n",integer2);印出來
+#include &lt;stdio.h&gt;
+int main(){
+  int integer1,integer2;
+  printf("Please enter first integer: ");
+  scanf("%d", &amp;integer1);
+  printf("Please enter second integer: ");
+  scanf("%d", &amp;integer2);
+int tmp =integer1;
+    integer1 =integer2;
+    integer2 = tmp;
+    printf("integer1: %d\n",integer1);
+    printf("integer2: %d\n",integer2);
+    
+  return(0);
+}</pre>
+<p><img alt="" height="100" src="./../images/螢幕擷取畫面 2023-12-28 002331.png" width="556"/></p><br />W6 << <a href='W6.html'>Previous</a> <a href='9.html'>Next</a> >> 9</div>
         
     <!-- footer -->
       <div class="container">
