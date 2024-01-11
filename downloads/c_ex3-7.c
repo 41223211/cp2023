@@ -12,7 +12,7 @@
  
    #include<stdio.h>
  
- main()
+ int main()
  {
  float this_is_a_number, total;
  int i, j;
