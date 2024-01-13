@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a><li><a href='W6.html'>W6</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='2-4.html'>2-4</a><li><a href='2-5.html'>2-5</a><li><a href='2-6.html'>2-6</a><li><a href='2-7.html'>2-7</a><li><a href='2-8.html'>2-8</a><li><a href='2-9.html'>2-9</a><li><a href='2-10.html'>2-10</a><li><a href='3-1.html'>3-1</a><li><a href='3-2.html'>3-2</a><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a><li><a href='W6.html'>W6</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='2-6.html'>2-6</a><li><a href='2-7.html'>2-7</a><li><a href='2-8.html'>2-8</a><li><a href='2-9.html'>2-9</a><li><a href='2-10.html'>2-10</a><li><a href='3-1.html'>3-1</a><li><a href='3-2.html'>3-2</a><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2-4.html'>Next</a> >> 2-4<br /><h1>c_ex</h1>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2-6.html'>Next</a> >> 2-6<br /><h1>c_ex</h1>
 <p>2-1.Say Hello World!. </p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;printf這個函數定義放在stdio.h裡面
 //main() 這個 function 傳回(return)一個整數的數值, 執行這個程式在結束時, 會將這個整數的數值傳回給作業系統
@@ -185,7 +185,34 @@ void main(){
   printf("a=%3.1f,b=%3.1f,c=%3.1d",a,b,c);
 
 }</pre>
-<p><img alt="" height="100" src="./../images/螢幕擷取畫面 2023-12-29 001807.png" width="455"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2-4.html'>Next</a> >> 2-4</div>
+<p><img alt="" height="100" src="./../images/螢幕擷取畫面 2023-12-29 001807.png" width="455"/></p><p>2-4.字元型態</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//char input,output;字元
+//scanf鍵盤輸入的值
+//output = input + 32;(ABC等等連號跟小寫差32)
+//printf("%c\n", output);把結果印出
+#include &lt;stdio.h&gt;
+int main(){
+  char input,output;
+  scanf("%c",&amp;input);
+  output = input + 32;
+  printf("%c\n", output);
+  return(0);
+}</pre>
+<p><img alt="" height="346" src="./../images/螢幕擷取畫面 2023-12-29 003556.png" width="509"/></p>
+<p></p><p>2-5.字元型態的範例2</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// char 宣告,字元是用單引號括起來
+//  y = (char)97;ASCII 中, 字元 97
+//printf("x=%c, y=%c,ASCII of y = %d",x,y,y);把結果印出來
+#include &lt;stdio.h&gt;
+int main(){
+  char x,y;
+  x = 'a';
+  y = (char)97;
+  printf("x=%c, y=%c,ASCII of y = %d",x,y,y);
+  return(0);
+
+}</pre>
+<p><img alt="" height="109" src="./../images/螢幕擷取畫面 2023-12-29 210354.png" width="529"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='2-6.html'>Next</a> >> 2-6</div>
         
     <!-- footer -->
       <div class="container">
