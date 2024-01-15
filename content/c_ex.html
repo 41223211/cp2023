@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a><li><a href='W6.html'>W6</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='3-2.html'>3-2</a><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='W4.html'>W4</a><li><a href='W5.html'>W5</a><li><a href='W6.html'>W6</a><li><a href='ANSIC.html'>ANSIC</a><li class='has-children'><a href='c_ex.html'>c_ex</a><ul class='dropdown'><li><a href='3-3.html'>3-3</a><li><a href='3-4.html'>3-4</a><li><a href='3-5.html'>3-5</a><li><a href='3-6.html'>3-6</a><li><a href='3-7.html'>3-7</a><li><a href='3-8.html'>3-8</a><li><a href='3-9.html'>3-9</a><li><a href='3-10.html'>3-10</a></li></ul><li class='has-children'><a href='W7.html'>W7</a><ul class='dropdown'><li><a href='UK.html'>UK</a><li><a href='PROC.html'>PROC</a><li><a href='JAP.html'>JAP</a></li></ul><li><a href='W15.html'>W15</a><li><a href='EU.html'>EU</a><li><a href='期末總結.html'>期末總結</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='3-2.html'>Next</a> >> 3-2<br /><h1>c_ex</h1>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='3-3.html'>Next</a> >> 3-3<br /><h1>c_ex</h1>
 <p>2-1.Say Hello World!. </p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//#include &lt;stdio.h&gt;printf這個函數定義放在stdio.h裡面
 //main() 這個 function 傳回(return)一個整數的數值, 執行這個程式在結束時, 會將這個整數的數值傳回給作業系統
@@ -301,7 +301,20 @@ int main(){
   printf("My first program\n");
   return(0);
 }</pre>
-<p><img alt="" height="144" src="./../images/螢幕擷取畫面 2023-12-31 120535.png" width="626"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='3-2.html'>Next</a> >> 3-2</div>
+<p><img alt="" height="144" src="./../images/螢幕擷取畫面 2023-12-31 120535.png" width="626"/></p><p>3-2. Get and Print a Character</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">//c = getchar();：這一行代碼用於獲取用戶輸入的字符，getchar函數從標準輸入中讀取一個字符，並將其賦值給變數c
+//printf("Character entered: ");：這是另一個輸出語句，提示即將顯示用戶輸入的字符。
+
+#include &lt;stdio.h&gt;
+ int main () {
+ char c;
+ printf("Enter character: ");
+ c = getchar(); 
+ printf("Character entered: ");
+ putchar(c); 
+ return(0);
+ }</pre>
+<p></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='3-3.html'>Next</a> >> 3-3</div>
         
     <!-- footer -->
       <div class="container">
